@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -eu
+
+cd "$AUTOPKGTEST_TMP"
+
+cat <<'EOF' > CMakeLists.txt
+cmake_minimum_required(VERSION 3.18)
+project("autopkgtest_compile")
+
+add_executable(main "main.cpp")
+
+find_package("cubeb")
+
+target_link_libraries(main PRIVATE cubeb::cubeb)
+
+EOF
+
+cat <<'EOF' > main.cpp
+#include <cubeb/cubeb.h>
+
+int main() {
+	cubeb* app_ctx;
+	cubeb_init(&app_ctx, "autopkgtest compile", NULL);
+	cubeb_destroy(app_ctx);
+	return 0;
+}
+
+EOF
+
+cmake -B build
+cmake --build build

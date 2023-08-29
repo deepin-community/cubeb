@@ -1,5 +1,132 @@
-template-repository (1.0-1) unstable; urgency=medium
+cubeb (0.0~git20230201.70b4e3d+ds-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 0.0~git20230201.70b4e3d+ds
+    - sndio: switch audio to 24-bit precision
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Sat, 04 Feb 2023 02:32:35 +0100
+
+cubeb (0.0~git20230127.88585b6+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20230127.88585b6+ds
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Mon, 30 Jan 2023 13:45:54 +0100
+
+cubeb (0.0~git20230109.c96f0d4+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20230109.c96f0d4+ds
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Wed, 11 Jan 2023 12:38:35 +0100
+
+cubeb (0.0~git20230105.1736e4a+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20230105.1736e4a+ds
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Mon, 09 Jan 2023 08:50:45 +0100
+
+cubeb (0.0~git20221214.dbc6033+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20221214.dbc6033+ds
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Thu, 15 Dec 2022 22:50:30 +0100
+
+cubeb (0.0~git20221213.e4da2d4+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20221213.e4da2d4+ds
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Wed, 14 Dec 2022 13:57:56 +0100
+
+cubeb (0.0~git20221207.51728e5+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20221207.51728e5+ds
+  * d/control: stop splitting arch and indep b-depends
+  * d/rules: install documentation in the -dev docdir
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Thu, 08 Dec 2022 17:53:32 +0100
+
+cubeb (0.0~git20221018.27d2a10+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20221018.27d2a10+ds
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Sat, 29 Oct 2022 22:59:16 +0200
+
+cubeb (0.0~git20220930.6b474ee+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20220930.6b474ee+ds
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Tue, 04 Oct 2022 10:51:09 +0200
+
+cubeb (0.0~git20220922.93d1fa3+ds-2) unstable; urgency=medium
+
+  * d/control: fix arch all build
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Thu, 29 Sep 2022 20:12:23 +0200
+
+cubeb (0.0~git20220922.93d1fa3+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20220922.93d1fa3+ds
+  * d/control: add libcubeb-doc package.
+    This new package contains Doxygen-generated API documentation
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Sun, 25 Sep 2022 19:14:15 +0200
+
+cubeb (0.0~git20220906.4783607+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20220906.4783607+ds
+  * d/rules: enable LTO
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Fri, 09 Sep 2022 13:39:33 +0200
+
+cubeb (0.0~git20220721.dc511c6+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20220721.dc511c6+ds
+  * d/control: build-depend on CMake 3.14
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Fri, 19 Aug 2022 01:23:19 +0200
+
+cubeb (0.0~git20220413.708f52c+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20220413.708f52c+ds
+  * d/control: mark as Multi-Arch: same
+  * d/rules: disable qa=+canary to work around #1009408
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Fri, 15 Apr 2022 18:06:26 +0200
+
+cubeb (0.0~git20220309.6e5b9fe+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20220309.6e5b9fe+ds
+  * d/tests: add autopkgtests
+  * d/patches: drop upstreamed patches
+  * d/libcubeb0.symbols: mark c++ symbol as optional.
+    Thanks to Gianfranco Costamagna for the patch (Closes: 1006877)
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Fri, 11 Mar 2022 23:02:08 +0100
+
+cubeb (0.0~git20220110.9edd150+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20220110.9edd150
+  * d/patches: use libbsd when using OSS and glibc
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Wed, 12 Jan 2022 19:29:06 +0100
+
+cubeb (0.0~git20211207.773f16b+ds-1) unstable; urgency=medium
+
+  * New upstream version 0.0~git20211207.773f16b
+  * d/control: only enable ALSA backend on Linux
+  * d/gbp.conf: use pbuilder
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Thu, 30 Dec 2021 14:11:12 +0100
+
+cubeb (0.0~git20211203.75d9d12+ds-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control: add Vcs fields
+  * d/patches: drop upstreamed patches
+  * d/rules: add qa=+all option
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Mon, 06 Dec 2021 20:03:28 +0100
+
+cubeb (0.0~git20211015.d512bfa+ds-1) unstable; urgency=medium
+
+  * Initial release. Closes: #995059
+
+ -- Andrea Pappacoda <andrea@pappacoda.it>  Sun, 17 Oct 2021 17:01:28 +0000
