@@ -1,0 +1,12 @@
+Document: cubeb
+Title: cubeb API documentation
+Author: Matthew Gregan <kinetik@flim.org>
+Abstract: cubeb is a cross platform audio library most notable for its use as
+ the audio backend within Gecko, Mozilla's browser engine. It supports
+ multiple audio backends and allows enumeration of audio devices and
+ opening audio streams with control over latency, sample rate and more.
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/libcubeb-dev/cubeb/index.html
+Files: /usr/share/doc/libcubeb-dev/cubeb/*.html

@@ -1,4 +1,36 @@
 #!/usr/bin/make -f
 
+# optimize=-lto because I use CMake's LTO
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all optimize=-lto qa=+all
+
 %:
 	dh $@
+
+# Tests can't be run because they require access to the host's audio
+# peripherals, and for some reason it seems that the tests can't access
+# them when ran under debuild
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
+		-DBUILD_SHARED_LIBS=ON \
+		-DBUILD_RUST_LIBS=OFF \
+		-DBUILD_TESTS=OFF \
+		-DBUILD_TOOLS=OFF \
+		-DBUNDLE_SPEEX=OFF \
+		-DLAZY_LOAD_LIBS=OFF \
+		-DUSE_SANITIZERS=OFF
+
+# Only building the doc target would require using cmake --install --component,
+# and this isn't currently easily possible with debhelper (see #1020732)
+#override_dh_auto_build-indep:
+#	dh_auto_build --indep -- doc
+#
+#override_dh_auto_install-indep:
+#	dh_auto_install --indep -- --component=Documentation
+
+# https://salsa.debian.org/debian/doxygen/-/blob/3be8390e2d89f79300c5d3f69619d37979a8a180/debian/dh-doxygen/doxygen.pm
+# https://bugs.debian.org/799543#37
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
+execute_after_dh_installdocs-indep:
+	dh_doxygen --indep
+endif
